@@ -15,6 +15,7 @@ else ()
     set(MUJOCO_PLATFORM linux-x86_64)
 endif ()
 include(FetchContent)
+set(FETCHCONTENT_FULLY_DISCONNECTED OFF) # In Ubuntu 24.04, the debhelper tool sets this variable to ON by default
 FetchContent_Declare(
     mujocoDownload
     URL https://github.com/google-deepmind/mujoco/releases/download/${MUJOCO_VERSION}/mujoco-${MUJOCO_VERSION}-${MUJOCO_PLATFORM}.tar.gz
